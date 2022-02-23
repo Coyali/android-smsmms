@@ -16,6 +16,8 @@
 
 package com.android.internal.net;
 
+import static com.klinker.android.send_message.Utils.FLAG_MUTABLE;
+
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -53,7 +55,7 @@ public class VpnConfig implements Parcelable {
         intent.putExtra("config", config);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY |
                 Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-        return PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        return PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT | FLAG_MUTABLE);
     }
 
     public String user;

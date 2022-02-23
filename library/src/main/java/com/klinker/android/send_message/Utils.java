@@ -46,6 +46,9 @@ public class Utils {
     private static final String TAG = "Utils";
     public static final int DEFAULT_SUBSCRIPTION_ID = 1;
 
+    //For app targeting android 12 +
+    public static final int FLAG_MUTABLE = 1<<25;
+
     /**
      * Gets the current users phone number
      *

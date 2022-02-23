@@ -1,6 +1,8 @@
 
 package com.android.mms.transaction;
 
+import static com.klinker.android.send_message.Utils.FLAG_MUTABLE;
+
 import android.annotation.TargetApi;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -73,7 +75,7 @@ public class DownloadManager {
         download.putExtra(MmsReceivedReceiver.EXTRA_URI, uri);
         download.putExtra(MmsReceivedReceiver.SUBSCRIPTION_ID, subscriptionId);
         final PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                context, 0, download, PendingIntent.FLAG_CANCEL_CURRENT);
+                context, 0, download, PendingIntent.FLAG_CANCEL_CURRENT | FLAG_MUTABLE);
 
         final SmsManager smsManager = SmsManagerFactory.createSmsManager(subscriptionId);
 
